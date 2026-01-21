@@ -14,6 +14,7 @@ const menuItems = [
     { title: 'Home', path: '/' },
     { title: 'Shop', path: '/shop' }, // Changed from /ProductPage to /shop based on LuShoppingCart link in Header
     { title: 'Blog', path: '/blog' },
+    { title: 'Services', path: '/services' },
     { title: 'Subscription', path: '/subscription' },
 ];
 

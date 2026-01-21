@@ -8,6 +8,7 @@ import imgAsva from "../../assets/Asva_header_logo.png";
 import { LuShoppingCart } from 'react-icons/lu';
 import { PRODUCTS } from '../../data/shopData';
 import { StaggeredMenu } from './StaggeredMenu';
+// import { div } from 'framer-motion/client';
 
 export const Header: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -40,6 +41,7 @@ export const Header: React.FC = () => {
         }
     }
 
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 10) {
@@ -68,7 +70,15 @@ export const Header: React.FC = () => {
                     </button>
 
                     {/* Logo */}
-                    <div className="absolute left-1/2 -translate-x-1/2">
+
+
+
+                    <div className={`
+                                       absolute left-1/2
+                                       transform
+                                       transition-transform duration-700 ease-in-out
+                                       ${openSearch ? '-translate-x-[210%] md:-translate-x-[50%]' : '-translate-x-[50%]'}
+                                    `}>
                         <Link to='/'>
                             <img
                                 src={imgAsva}
@@ -155,7 +165,7 @@ export const Header: React.FC = () => {
                         )}
                     </div>
                 </div>
-            </header>
+            </header >
 
             <StaggeredMenu isOpen={open} onClose={() => setOpen(false)} />
         </>

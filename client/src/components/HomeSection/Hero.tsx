@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
                     <div className="relative space-y-6 lg:space-y-6">
                         <div className="absolute left-4  lg:-left-16 top-[50%] hidden lg:block">
                             <div className="text-3xl lg:text-4xl tracking-[0.08em] -rotate-90 origin-left font-['Kalnia'] font-medium whitespace-nowrap">
-                                ASVA
+                                ÃSVA
                             </div>
                         </div>
 
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="relative flex justify-center items-center lg:justify-end min-h-[400px] lg:min-h-[600px]">
+                    <div className="relative flex justify-center items-center lg:justify-end min-h-[260px] lg:min-h-[600px]">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeSlide}
@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
                                 <img
                                     src={heroSlides[activeSlide].image}
                                     alt="ASVA Water Bottle"
-                                    className="w-64 lg:w-[520px] h-auto object-contain "
+                                    className="w-64 sm:w-[600px] lg:w-[520px] h-auto object-cover "
                                 />
                                 {/* <img
                                     src={heroSlides[activeSlide].image}

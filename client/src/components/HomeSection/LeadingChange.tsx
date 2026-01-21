@@ -50,7 +50,7 @@ export const LeadingChange: React.FC = () => {
                 </div>
 
                 {/* Background Image Section */}
-                <div className="relative min-h-[715px]  rounded-3xl overflow-hidden">
+                <div className="relative sm:min-h-[715px] min-h-[825px] rounded-3xl overflow-hidden">
                     {/* Background Image with Overlay */}
                     <div className="absolute inset-0">
                         <img

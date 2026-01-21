@@ -51,10 +51,10 @@ import C_2_2 from '../assets/shop_img/C_2/C_2_2.png';
 import C_2_3 from '../assets/shop_img/C_2/C_2_3.png';
 import C_2_4 from '../assets/shop_img/C_2/C_2_4.png';
 
-import C_3 from '../assets/shop_img/C_3/C_3.png';
-import C_3_2 from '../assets/shop_img/C_3/C_3_2.png';
-import C_3_3 from '../assets/shop_img/C_3/C_3_3.png';
-import C_3_4 from '../assets/shop_img/C_3/20.png'; // Using 20.png as 4th image based on dir
+// import C_3 from '../assets/shop_img/C_3/C_3.png';
+// import C_3_2 from '../assets/shop_img/C_3/C_3_2.png';
+// import C_3_3 from '../assets/shop_img/C_3/C_3_3.png';
+// import C_3_4 from '../assets/shop_img/C_3/20.png'; // Using 20.png as 4th image based on dir
 
 import C_4 from '../assets/shop_img/C_4/C_4.png';
 import C_4_2 from '../assets/shop_img/C_4/C_4_2.png';
@@ -67,10 +67,11 @@ import C_4_4 from '../assets/shop_img/C_4/C_for.png'; // Using C_for.png as 4th 
 // import E_1_3 from '../assets/shop_img/E_1/E_1_3.png';
 // import E_1_4 from '../assets/shop_img/E_1/E_1_4.png';
 
-import E_2 from '../assets/shop_img/E_2/E_2.png';
-import E_2_2 from '../assets/shop_img/E_2/E_2_2.png';
-import E_2_3 from '../assets/shop_img/E_2/E_2_3.png';
-import E_2_4 from '../assets/shop_img/E_2/E_2_4.png';
+import E_2 from '../assets/shop_img/E_2/mashine_1.png';
+// import E_2 from '../assets/shop_img/E_2/E_2.png';
+import E_2_2 from '../assets/shop_img/E_2/mashine_1.png';
+import E_2_3 from '../assets/shop_img/E_2/mashine_1.png';
+import E_2_4 from '../assets/shop_img/E_2/mashine_1.png';
 
 // import E_3 from '../assets/shop_img/E_3/E_3.png';
 // import E_3_2 from '../assets/shop_img/E_3/E_3_2.png';
@@ -128,12 +129,104 @@ export interface Product {
 
     tagline: string;
     keyFeatures: string[];
-
+    enableZoom?: boolean | boolean[]; // Control zoom per product or per image
 }
 
 export const PRODUCTS: Product[] = [
     {
         id: '1',
+        title: 'ASVA Alkaline Water – 200ml Bottle (Pack of 24)',
+        type: 'Bottle',
+        image: B_1,
+        images: [B_1, B_1_2, B_1_3, B_1_4], // Imported from shop_img/B_1
+        badges: ['200ml'],
+        author: 'ASVA Official Store',
+        price: 'MRP ₹599 | Offer ₹499',
+        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
+        subDescription: 'This variant is available in a <b>200ml</b> bottle and offered in a <b> Pack of 24 </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
+        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
+        keyFeatures: [
+            'Alkaline pH balanced for smooth and refreshing hydration',
+            "Clean taste suitable for daily and premium consumption",
+            'Hygienic food grade packaging for safe consumption',
+            'Available in <b> 200ml </b> with <b>Pack of 24</b> options',
+            "Standardized premium design across all size variants",
+            "Ideal for hospitality, offices, meetings, events, and retail",
+        ],
+        // Example: Enable zoom only on 2nd and 4th images
+        enableZoom: [false, false, false, true],
+    },
+    
+    {
+        id: '2',
+        title: 'ASVA Event Pack – 200ml Bottles (Pack of 24)',
+        type: 'Bottle',
+        image: I_1,
+        images: [I_1, I_1_2, I_1_3, I_1_4],
+        badges: ['200ml'],
+        author: 'ASVA Official Store',
+        price: 'MRP ₹599 | Offer ₹499',
+        
+        description: 'The ASVA Event Pack is designed to provide convenient and hygienic alkaline drinking water for gatherings, meetings, and large scale events. Each bottle contains <b>200ml</b> of clean, pH balanced water, making it ideal for quick consumption and easy distribution.',
+        subDescription: 'This pack includes <b> Pack of 24 </b> <b>200ml</b> bottles, offering a practical hydration solution for conferences, corporate events, hospitality setups, and social functions. Designed for ease of handling and consistent quality, it ensures reliable hydration for every occasion.',
+        tagline: 'Convenient Alkaline Hydration for Events and Gatherings',
+        keyFeatures: [
+            'Includes <b> Pack of 24 </b> <b>200ml</b> alkaline drinking water',
+            'Compact size ideal for events and quick consumption',
+            'Clean and pH balanced water for smooth hydration',
+            'Hygienic sealed bottles for safe distribution',
+            'Suitable for meetings, conferences, and hospitality use',
+            'Easy to store, carry, and distribute',
+        ],
+        enableZoom: [false, false, true, false],
+    },
+    
+    {
+        id: '3',
+        title: 'ASVA Alkaline Water – 250ml Bottle (Pack of 24)',
+        type: 'Bottle',
+        image: B_2,
+        images: [B_2, B_2_2, B_2_3, B_2_4], // Imported from shop_img/B_2
+        badges: ['250ml'],
+        author: 'ASVA Official Store',
+        price: 'MRP ₹649 | Offer ₹549',
+        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
+        subDescription: 'This variant is available in a <b>250ml</b> bottle and offered in a <b> Pack of 24 </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
+        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
+        keyFeatures: [
+            'Alkaline pH balanced for smooth and refreshing hydration',
+            "Clean taste suitable for daily and premium consumption",
+            'Hygienic food grade packaging for safe consumption',
+            'Available in <b> 250ml </b> with <b>Pack of 24</b> options',
+            "Standardized premium design across all size variants",
+            "Ideal for hospitality, offices, meetings, events, and retail",
+        ],
+        enableZoom: [true, false, false, false],
+    },
+    {
+        id: '4',
+        title: 'ASVA Alkaline Water – 500ml Bottle (Pack of 24)',
+        type: 'Bottle',
+        image: B_3,
+        images: [B_3, B_3_2, B_3_3, B_3_4], // Imported from shop_img/B_3
+        badges: ['500ml'],
+        author: 'ASVA Official Store',
+        price: 'MRP ₹899 | Offer ₹799',
+        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
+        subDescription: 'This variant is available in a <b>500ml</b> bottle and offered in a <b> Pack of 24 </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
+        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
+        keyFeatures: [
+            'Alkaline pH balanced for smooth and refreshing hydration',
+            "Clean taste suitable for daily and premium consumption",
+            'Hygienic food grade packaging for safe consumption',
+            'Available in <b> 500ml </b> with <b>Pack of 24</b> options',
+            "Standardized premium design across all size variants",
+            "Ideal for hospitality, offices, meetings, events, and retail",
+        ],
+        enableZoom: [true, false, false, false],
+    },
+    {
+        id: '5',
         title: 'ASVA Alkaline Water – 750ml Glass Bottle (Gift Tube)',
         type: 'Bottle',
         image: A_1,
@@ -152,10 +245,9 @@ export const PRODUCTS: Product[] = [
             "Standardized premium design across all size variants",
             "Ideal for hospitality, offices, meetings, events, and retail",
         ],
-
     },
     {
-        id: '2',
+        id: '6',
         title: 'ASVA Alkaline Water – 750ml Glass Bottle (Single)',
         type: 'Bottle',
         image: A_2,
@@ -174,10 +266,9 @@ export const PRODUCTS: Product[] = [
             "Standardized premium design across all size variants",
             "Ideal for hospitality, offices, meetings, events, and retail",
         ],
-
     },
     {
-        id: '3',
+        id: '7',
         title: 'ASVA Alkaline Water – 750ml Glass Bottle (Pack of 6)',
         type: 'Bottle',
         image: A_3,
@@ -198,7 +289,7 @@ export const PRODUCTS: Product[] = [
         ],
     },
     {
-        id: '4',
+        id: '8',
         title: 'ASVA Alkaline Water – 750ml Glass Bottle (Pack of 12)',
         type: 'Bottle',
         image: A_4,
@@ -219,74 +310,10 @@ export const PRODUCTS: Product[] = [
         ],
 
     },
-    // PET Bottles
-    {
-        id: '5',
-        title: 'ASVA Alkaline Water – 200ml Bottle (Pack of 24)',
-        type: 'Bottle',
-        image: B_1,
-        images: [B_1, B_1_2, B_1_3, B_1_4], // Imported from shop_img/B_1
-        badges: ['200ml'],
-        author: 'ASVA Official Store',
-        price: 'MRP ₹599 | Offer ₹499',
-        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
-        subDescription: 'This variant is available in a <b>200ml</b> bottle and offered in a <b> Pack of 24 </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
-        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
-        keyFeatures: [
-            'Alkaline pH balanced for smooth and refreshing hydration',
-            "Clean taste suitable for daily and premium consumption",
-            'Hygienic food grade packaging for safe consumption',
-            'Available in <b> 200ml </b> with <b>Pack of 24</b> options',
-            "Standardized premium design across all size variants",
-            "Ideal for hospitality, offices, meetings, events, and retail",
-        ],
-    },
-    {
-        id: '6',
-        title: 'ASVA Alkaline Water – 250ml Bottle (Pack of 24)',
-        type: 'Bottle',
-        image: B_2,
-        images: [B_2, B_2_2, B_2_3, B_2_4], // Imported from shop_img/B_2
-        badges: ['250ml'],
-        author: 'ASVA Official Store',
-        price: 'MRP ₹649 | Offer ₹549',
-        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
-        subDescription: 'This variant is available in a <b>250ml</b> bottle and offered in a <b> Pack of 24 </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
-        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
-        keyFeatures: [
-            'Alkaline pH balanced for smooth and refreshing hydration',
-            "Clean taste suitable for daily and premium consumption",
-            'Hygienic food grade packaging for safe consumption',
-            'Available in <b> 250ml </b> with <b>Pack of 24</b> options',
-            "Standardized premium design across all size variants",
-            "Ideal for hospitality, offices, meetings, events, and retail",
-        ],
-    },
-
+    // PET Bottles 
 
     {
-        id: '7',
-        title: 'ASVA Alkaline Water – 500ml Bottle (Pack of 24)',
-        type: 'Bottle',
-        image: B_3,
-        images: [B_3, B_3_2, B_3_3, B_3_4], // Imported from shop_img/B_3
-        badges: ['500ml'],
-        author: 'ASVA Official Store',
-        price: 'MRP ₹899 | Offer ₹799',
-        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
-        subDescription: 'This variant is available in a <b>500ml</b> bottle and offered in a <b> Pack of 24 </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
-        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
-        keyFeatures: [
-            'Alkaline pH balanced for smooth and refreshing hydration',
-            "Clean taste suitable for daily and premium consumption",
-            'Hygienic food grade packaging for safe consumption',
-            'Available in <b> 500ml </b> with <b>Pack of 24</b> options',
-            "Standardized premium design across all size variants",
-            "Ideal for hospitality, offices, meetings, events, and retail",
-        ],
-    },
-    {
-        id: '8',
+        id: '9',
         title: 'ASVA Alkaline Water – 1L Bottle (Pack of 12)',
         type: 'Bottle',
         image: B_4,
@@ -306,9 +333,33 @@ export const PRODUCTS: Product[] = [
             "Ideal for hospitality, offices, meetings, events, and retail",
         ],
     },
+    {
+        id: '10',
+        title: 'ASVA Corporate Pantry Pack – 1L Bottles (Pack of 12)',
+        type: 'Bottle',
+        image: I_2,
+        images: [I_2, I_2_2, I_2_3, I_2_4],
+        badges: ['1L'],
+        author: 'ASVA Official Store',
+        price: 'MRP ₹599 | Offer ₹549',
+        description: 'The ASVA Corporate Pantry Pack is designed to meet the daily hydration needs of offices and professional environments. Each 1L bottle contains clean, pH balanced alkaline drinking water, offering smooth taste and reliable hydration throughout the workday.',
+
+        subDescription: 'This pack includes <b> Pack of 12 </b> <b>1L</b> capacity, making it ideal for office pantries, meeting rooms, and corporate spaces. Designed for convenience and consistency, it supports regular consumption while maintaining a professional and organized setup.',
+
+        tagline: 'Reliable Alkaline Hydration for Professional Workspaces',
+
+        keyFeatures: [
+            'Includes <b> Pack of 12 </b> <b>1L</b> alkaline drinking water',
+            'Ideal for office pantries and corporate environments',
+            'Clean and pH balanced water for daily consumption',
+            'Hygienically sealed bottles for safe use',
+            'Convenient size for individual daily hydration',
+            'Easy to store and manage in professional settings',
+        ],
+    },
     // Jars & Cans
     {
-        id: '9',
+        id: '11',
         title: 'ASVA Alkaline Water – 5L Can (Single)',
         type: 'Bottle',
         image: C_1,
@@ -328,8 +379,9 @@ export const PRODUCTS: Product[] = [
             "Ideal for hospitality, offices, meetings, events, and retail",
         ],
     },
+
     {
-        id: '10',
+        id: '12',
         title: 'ASVA Alkaline Water – 10L Can (Single)',
         type: 'Bottle',
         image: C_2,
@@ -349,8 +401,9 @@ export const PRODUCTS: Product[] = [
             "Ideal for hospitality, offices, meetings, events, and retail",
         ],
     },
+
     {
-        id: '11',
+        id: '13',
         title: 'ASVA Alkaline Water – 20L Refill Jar (Deposit System)',
         type: 'Bottle',
         image: C_4,
@@ -370,31 +423,31 @@ export const PRODUCTS: Product[] = [
             "Ideal for hospitality, offices, meetings, events, and retail",
         ],
     },
-    {
-        id: '12',
-        title: 'ASVA 20L Jar Deposit (Refundable Security)',
-        type: 'Bottle',
-        image: C_3,
-        images: [C_3, C_3_2, C_3_3, C_3_4], // Note: ID 12 used C_3 in original code
-        badges: ['20L'],
-        author: 'ASVA Official Store',
-        price: 'MRP ₹300 | Offer ₹300',
-        description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
-        subDescription: 'This variant is available in a <b> 20L </b> Jar Deposit and offered in a <b> Refundable Security </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
-        tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
-        keyFeatures: [
-            'Alkaline pH balanced for smooth and refreshing hydration',
-            "Clean taste suitable for daily and premium consumption",
-            'Hygienic food grade packaging for safe consumption',
-            'Available in <b> 20L </b> with <b>Refundable Security</b> options',
-            "Standardized premium design across all size variants",
-            "Ideal for hospitality, offices, meetings, events, and retail",
-        ],
+    // {
+    //     id: '12',
+    //     title: 'ASVA 20L Jar Deposit (Refundable Security)',
+    //     type: 'Bottle',
+    //     image: C_3,
+    //     images: [C_3, C_3_2, C_3_3, C_3_4], 
+    //     badges: ['20L'],
+    //     author: 'ASVA Official Store',
+    //     price: 'MRP ₹300 | Offer ₹300',
+    //     description: 'Premium alkaline drinking water crafted to provide clean, balanced hydration for everyday wellness and professional use. Carefully processed to maintain optimal pH levels, it delivers a smooth and refreshing taste suitable for daily consumption as well as premium serving.',
+    //     subDescription: 'This variant is available in a <b> 20L </b> Jar Deposit and offered in a <b> Refundable Security </b> format. Designed with a standardized, high quality packaging system, it ensures consistent brand presentation across all sizes while allowing flexibility based on consumption needs. Suitable for retail, hospitality, corporate environments, events, and lifestyle use.',
+    //     tagline: 'Pure Alkaline Hydration Crafted for Everyday Balance and Refreshment',
+    //     keyFeatures: [
+    //         'Alkaline pH balanced for smooth and refreshing hydration',
+    //         "Clean taste suitable for daily and premium consumption",
+    //         'Hygienic food grade packaging for safe consumption',
+    //         'Available in <b> 20L </b> with <b>Refundable Security</b> options',
+    //         "Standardized premium design across all size variants",
+    //         "Ideal for hospitality, offices, meetings, events, and retail",
+    //     ],
 
-    },
+    // },
     // Machines
     {
-        id: '13',
+        id: '14',
         title: 'ASVA Portable Alkaline Ionizer – HOME Series (Countertop)',
         type: 'Machine',
         image: E_2,
@@ -415,7 +468,7 @@ export const PRODUCTS: Product[] = [
         ],
     },
     {
-        id: '14',
+        id: '15',
         title: 'ASVA Portable Alkaline Ionizer – PRO Series (High Usage)',
         type: 'Machine',
         image: E_2,
@@ -441,7 +494,7 @@ export const PRODUCTS: Product[] = [
 
     },
     {
-        id: '15',
+        id: '16',
         title: 'ASVA Portable Alkaline Ionizer – PRIME Series (Premium)',
         type: 'Machine',
         image: E_2,
@@ -466,7 +519,7 @@ export const PRODUCTS: Product[] = [
     },
     // Filter Replacement Sets
     {
-        id: '16',
+        id: '17',
         title: 'ASVA Filter Set – HOME Series (Replacement Pack)',
         type: 'Accessory',
         image: F_1,
@@ -490,7 +543,7 @@ export const PRODUCTS: Product[] = [
         ],
     },
     {
-        id: '17',
+        id: '18',
         title: 'ASVA Filter Set – PRO Series (Replacement Pack)',
         type: 'Accessory',
         image: F_1, // Fallback to F_1 as F_2 is missing
@@ -515,7 +568,7 @@ export const PRODUCTS: Product[] = [
         ],
     },
     {
-        id: '18',
+        id: '19',
         title: 'ASVA Filter Set – PRIME Series (Replacement Pack)',
         type: 'Accessory',
         image: F_1, // Fallback to F_1 as F_3 is missing
@@ -539,27 +592,7 @@ export const PRODUCTS: Product[] = [
         ],
     },
     // Accessories
-    {
-        id: '19',
-        title: 'ASVA 20L Jar Stand (Steel)',
-        type: 'Accessory',
-        image: H_1,
-        images: [H_1, H_1_2, H_1_3, H_1_4],
-        badges: ["Stand"],
-        author: 'ASVA Official Store',
-        price: 'MRP ₹999 | Offer ₹899',
-        description: 'The ASVA 20L Jar Stand is designed to provide stable and convenient support for standard 20 liter water jars. Built using durable steel construction, it ensures safety, balance, and ease of use for daily water dispensing needs.',
-        subDescription: 'Designed for homes, offices, and commercial spaces, this <b> steel jar stand </b> offers a sturdy and practical solution for placing 20L water jars at a comfortable height. Its compact design allows easy placement while maintaining strength and long term durability.',
-        tagline: 'Strong and Reliable Support for Everyday Water Dispensing',
-        keyFeatures: [
-            'Designed to support standard 20 liter water jars',
-            'Durable <b>steel construction</b> for long term use',
-            'Stable and balanced design for safe placement',
-            'Suitable for homes, offices, and commercial spaces',
-            'Compact structure for easy placement and handling',
-            'Ideal for everyday water dispensing convenience',
-        ],
-    },
+
     {
         id: '20',
         title: 'ASVA Manual Pump for 20L Jar',
@@ -608,52 +641,29 @@ export const PRODUCTS: Product[] = [
             'Lightweight and compact design',
         ],
     },
-    // Corporate / Event Products
     {
         id: '22',
-        title: 'ASVA Event Pack – 200ml Bottles (Pack of 24)',
-        type: 'Bottle',
-        image: I_1,
-        images: [I_1, I_1_2, I_1_3, I_1_4],
-        badges: ['200ml'],
+        title: 'ASVA 20L Jar Stand (Steel)',
+        type: 'Accessory',
+        image: H_1,
+        images: [H_1, H_1_2, H_1_3, H_1_4],
+        badges: ["Stand"],
         author: 'ASVA Official Store',
-        price: 'MRP ₹599 | Offer ₹499',
-
-        description: 'The ASVA Event Pack is designed to provide convenient and hygienic alkaline drinking water for gatherings, meetings, and large scale events. Each bottle contains <b>200ml</b> of clean, pH balanced water, making it ideal for quick consumption and easy distribution.',
-        subDescription: 'This pack includes <b> Pack of 24 </b> <b>200ml</b> bottles, offering a practical hydration solution for conferences, corporate events, hospitality setups, and social functions. Designed for ease of handling and consistent quality, it ensures reliable hydration for every occasion.',
-        tagline: 'Convenient Alkaline Hydration for Events and Gatherings',
+        price: 'MRP ₹999 | Offer ₹899',
+        description: 'The ASVA 20L Jar Stand is designed to provide stable and convenient support for standard 20 liter water jars. Built using durable steel construction, it ensures safety, balance, and ease of use for daily water dispensing needs.',
+        subDescription: 'Designed for homes, offices, and commercial spaces, this <b> steel jar stand </b> offers a sturdy and practical solution for placing 20L water jars at a comfortable height. Its compact design allows easy placement while maintaining strength and long term durability.',
+        tagline: 'Strong and Reliable Support for Everyday Water Dispensing',
         keyFeatures: [
-            'Includes <b> Pack of 24 </b> <b>200ml</b> alkaline drinking water',
-            'Compact size ideal for events and quick consumption',
-            'Clean and pH balanced water for smooth hydration',
-            'Hygienic sealed bottles for safe distribution',
-            'Suitable for meetings, conferences, and hospitality use',
-            'Easy to store, carry, and distribute',
+            'Designed to support standard 20 liter water jars',
+            'Durable <b>steel construction</b> for long term use',
+            'Stable and balanced design for safe placement',
+            'Suitable for homes, offices, and commercial spaces',
+            'Compact structure for easy placement and handling',
+            'Ideal for everyday water dispensing convenience',
         ],
     },
-    {
-        id: '23',
-        title: 'ASVA Corporate Pantry Pack – 1L Bottles (Pack of 12)',
-        type: 'Bottle',
-        image: I_2,
-        images: [I_2, I_2_2, I_2_3, I_2_4],
-        badges: ['1L'],
-        author: 'ASVA Official Store',
-        price: 'MRP ₹599 | Offer ₹549',
-        description: 'The ASVA Corporate Pantry Pack is designed to meet the daily hydration needs of offices and professional environments. Each 1L bottle contains clean, pH balanced alkaline drinking water, offering smooth taste and reliable hydration throughout the workday.',
+    // Corporate / Event Products
 
-        subDescription: 'This pack includes <b> Pack of 12 </b> <b>1L</b> capacity, making it ideal for office pantries, meeting rooms, and corporate spaces. Designed for convenience and consistency, it supports regular consumption while maintaining a professional and organized setup.',
 
-        tagline: 'Reliable Alkaline Hydration for Professional Workspaces',
-
-        keyFeatures: [
-            'Includes <b> Pack of 12 </b> <b>1L</b> alkaline drinking water',
-            'Ideal for office pantries and corporate environments',
-            'Clean and pH balanced water for daily consumption',
-            'Hygienically sealed bottles for safe use',
-            'Convenient size for individual daily hydration',
-            'Easy to store and manage in professional settings',
-        ],
-    }
 ];
 

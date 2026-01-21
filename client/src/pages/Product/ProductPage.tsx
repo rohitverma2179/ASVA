@@ -22,13 +22,18 @@ export const ProductPage: React.FC = () => {
             <main className="container mx-auto px-6 py-24 md:py-32">
                 <div className="flex flex-col lg:flex-row">
                     {/* Left Column: Gallery */}
-                    <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
+                    <div className="w-full lg:w-1/2 mb-10 lg:mb-0 relative z-30">
                         <div className="lg:sticky lg:top-32">
-                            <ProductGallery image={product.image} images={product.images} />
+
+                            <ProductGallery
+                                image={product.image}
+                                images={product.images}
+                                enableZoom={product.enableZoom}
+                            />
                         </div>
                     </div>
                     {/* Right Column: Info & Description */}
-                    <div className="w-full lg:w-1/2">
+                    <div className="w-full lg:w-1/2 relative z-10">
                         <ProductInfo title={product.title} price={product.price} tagline={product.tagline} />
                         <ProductDescription description={product.description} subDescription={product.subDescription} keyFeatures={product.keyFeatures} />
                     </div>

@@ -9,7 +9,7 @@ export const InfoSection: React.FC = () => {
 
                 </h2>
 
-                <div className="text-xs md:text-base text-gray-600 leading-relaxed space-y-4 max-w-[92.5%] mx-auto">
+                <div className="text-[16px] md:text-[16px] text-gray-600 leading-relaxed space-y-4 max-w-[92.5%] mx-auto">
                     <p>
                         ASVA by Kevvali is created with one purpose: <b> Pure Water, Better India.</b>We make alkaline hydration simple and reliable for Indian homes and businesses through <b>packaged alkaline water, refill jar subscriptions, and portable alkaline ionizer machines</b> under one accountable brand.
                     </p>

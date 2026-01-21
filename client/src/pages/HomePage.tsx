@@ -14,11 +14,21 @@ export const HomePage: React.FC = () => {
             <Header />
             <main>
                 <Hero />
-                <BrandIntro />
-                <BrandStory />
-                <LeadingChange />
-                <BlogSection />
-                <FeaturedBanner />
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <BrandIntro />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <BrandStory />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <LeadingChange />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <BlogSection />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <FeaturedBanner />
+                </div>
             </main>
             <Footer />
         </div>

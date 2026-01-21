@@ -57,7 +57,7 @@ export const SubscriptionForm: React.FC = () => {
 
     return (
         <section className="py-20 bg-white">
-            <div className="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-center gap-16 max-w-6xl">
+            <div className="container mx-auto px-0 md:px-12 flex flex-col lg:flex-row items-center justify-center gap-16 max-w-6xl">
 
                 {/* Left: Bottles */}
                 <div className="flex justify-center relative lg:w-1/2">
@@ -79,7 +79,7 @@ export const SubscriptionForm: React.FC = () => {
                 </div>
 
                 {/* Right: Form Card */}
-                <div className="lg:w-2/3 w-full max-w-2xl bg-white rounded-4xl border border-gray-200 p-8 md:p-10 shadow-sm">
+                <div className="lg:w-2/3 w-full max-w-2xl bg-white rounded-4xl border border-gray-200 p-4 md:p-10 shadow-sm">
                     <div className="mb-6">
                         <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Asva Packaged Drinking Water</span>
                         <h3 className="text-xl md:text-2xl font-serif text-black mt-1 mb-2">Core Subscription Plans</h3>
@@ -120,14 +120,14 @@ export const SubscriptionForm: React.FC = () => {
                     <div className="space-y-6 border border-gray-100 rounded-2xl p-6">
                         <div>
                             <label className="block text-[10px] font-bold text-gray-900 mb-2 uppercase tracking-widest">Subscription Duration</label>
-                            <div className="flex gap-4">
+                            <div className="flex flex-col md:flex-row gap-4">
                                 <div className="w-full">
                                     <p className="text-[9px] text-gray-400 mb-1 ml-2">Start Date</p>
                                     <input
                                         type="date"
                                         value={startDate}
                                         onChange={(e) => setStartDate(e.target.value)}
-                                        className="border border-gray-300 rounded-full px-5 py-3 text-xs text-gray-600 w-full focus:outline-none focus:border-[#00659e]"
+                                        className="border border-gray-300 rounded-full px-5 py-3 text-xs text-gray-900 bg-white w-full appearance-none min-h-[42px] focus:outline-none focus:border-[#00659e]"
                                         placeholder="Start Date"
                                     />
                                 </div>
@@ -137,7 +137,7 @@ export const SubscriptionForm: React.FC = () => {
                                         type="date"
                                         value={endDate}
                                         onChange={(e) => setEndDate(e.target.value)}
-                                        className={`border rounded-full px-5 py-3 text-xs text-gray-600 w-full focus:outline-none focus:border-[#00659e]
+                                        className={`border rounded-full px-5 py-3 text-xs text-gray-900 bg-white w-full appearance-none min-h-[42px] focus:outline-none focus:border-[#00659e]
                                             ${!isDateValid ? 'border-red-300 bg-red-50' : 'border-gray-300'}
                                         `}
                                         placeholder="End Date"

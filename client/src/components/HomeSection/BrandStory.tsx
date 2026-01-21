@@ -58,7 +58,7 @@ export const BrandStory: React.FC = () => {
 
             >
                 {/* Left Column (Selectable Cards) */}
-                <div className="w-full lg:w-[20%] flex flex-col 2xl:gap-28 gap-16 items-center lg:items-center pt-20">
+                <div className="w-full lg:w-[20%] flex  sm:flex-col  2xl:gap-28 gap-10 items-center lg:items-center pt-8 sm:pt-20">
                     {BRAND_DATA.map((item, index) => (
                         <button
                             key={index}
@@ -77,7 +77,7 @@ export const BrandStory: React.FC = () => {
 
 
                 {/* Center Column (Dynamic Image) */}
-                <div className="w-full lg:w-[50%] relative h-[600px] flex items-center justify-center"
+                <div className="w-full lg:w-[50%] relative h-[400px] sm:h-[600px] flex items-center justify-center"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                 >
@@ -86,7 +86,7 @@ export const BrandStory: React.FC = () => {
                         <img
                             key={activeData.image}
                             src={activeData.image}
-                            className="h-[600px] w-auto object-contain rounded-2xl  animate-in fade-in duration-700"
+                            className="h-[400px] sm:h-[600px]  w-auto object-contain rounded-2xl  animate-in fade-in duration-700"
                             alt={activeData.title}
                         />
                     </div>

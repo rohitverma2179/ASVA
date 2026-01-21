@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
 
     return (
         <footer className="w-full h-1/2 bg-linear-to-b from-[#cbf1fa] to-white pt-20 lg:pt-40 pb-10">
-            <div className="container mx-auto px-16">
+            <div className="container mx-auto px-5 md:px-16">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end">
 
                     {/* Left: Navigation */}
@@ -17,6 +17,7 @@ export const Footer: React.FC = () => {
                         <Link to="/" className="hover:text-blue-600  transition-colors">Home</Link>
                         <Link to="/shop" className="hover:text-blue-600  transition-colors">Shop</Link>
                         <Link to="/blog" className="hover:text-blue-600  transition-colors">Blog</Link>
+                        <Link to="/services" className="hover:text-blue-600  transition-colors">services</Link>
                         <Link to="/subscription" className="hover:text-blue-600  transition-colors">Subscription</Link>
                     </nav>
 

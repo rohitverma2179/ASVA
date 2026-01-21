@@ -28,22 +28,35 @@ export const ShopPage: React.FC = () => {
         <div className="min-h-screen bg-white font-sans">
             <Header />
             <main>
-                <ShopBanner />
-                <ProductFilters
-                    activeFilter={activeFilter}
-                    onFilterChange={setActiveFilter}
-                />
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <ShopBanner />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <ProductFilters
+                        activeFilter={activeFilter}
+                        onFilterChange={setActiveFilter}
+                    />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
 
-                <div className="container mx-auto px-6 md:px-12 pb-20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-                        {filteredProducts.map(product => (
-                            <ProductCard key={product.id} product={product} />
-                        ))}
+                    <div className="container mx-auto px-2 md:px-12 pb-20">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-8 md:gap-x-8 md:gap-y-16">
+                            {filteredProducts.map(product => (
+                                <ProductCard key={product.id} product={product} />
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <InfoSection />
-                <FAQSection  faqData={faqData} />
+                <div data-aos="fade-up" data-aos-duration="1000">
+
+                    <InfoSection />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                <FAQSection faqData={faqData} />
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000">
                 <FeaturedBanner />
+                </div>
             </main>
             <Footer />
         </div>
