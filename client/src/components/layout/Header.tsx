@@ -8,15 +8,23 @@ import imgAsva from "../../assets/Asva_header_logo.png";
 import { LuShoppingCart } from 'react-icons/lu';
 import { PRODUCTS } from '../../data/shopData';
 import { StaggeredMenu } from './StaggeredMenu';
-// import { div } from 'framer-motion/client';
+import { CartSidebar } from './CartSidebar';
+import { useCart } from '../../context/CartContext';
 
 export const Header: React.FC = () => {
+    /**
+     * STEP 4: Integrate Cart Sidebar
+     * Add the CartSidebar component to the layout and update the cart button 
+     * to toggle its visibility while showing a live item count badge.
+     */
     const [open, setOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [openSearch, setOpenSearch] = useState<boolean>(false);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
+
+    const { totalItems, setIsCartOpen } = useCart();
 
     useEffect(() => {
         if (searchQuery.trim() === '') {
@@ -110,12 +118,16 @@ export const Header: React.FC = () => {
                         </button>
 
                         <button
-                            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                            onClick={() => setIsCartOpen(true)}
+                            className="p-2 hover:bg-gray-100 rounded-lg transition-colors relative"
                             aria-label="Cart"
                         >
-                            <Link to={"/shop"}>
-                                <LuShoppingCart className="w-6 h-6" />
-                            </Link>
+                            <LuShoppingCart className="w-6 h-6" />
+                            {totalItems > 0 && (
+                                <span className="absolute top-0 right-0 bg-[#00659e] text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                                    {totalItems}
+                                </span>
+                            )}
                         </button>
 
                         {/* Search Results Dropdown */}
@@ -168,6 +180,7 @@ export const Header: React.FC = () => {
             </header >
 
             <StaggeredMenu isOpen={open} onClose={() => setOpen(false)} />
+            <CartSidebar />
         </>
     );
 };

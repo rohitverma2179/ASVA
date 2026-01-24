@@ -57,7 +57,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
     };
 
     return (
-        <div className="flex gap-4 md:gap-6 h-[400px] md:h-[500px] lg:h-[600px] relative z-20">
+        <div className="flex gap-4 md:gap-6 h-[400px] md:h-[500px] lg:h-[600px] relative">
             {/* Thumbnails */}
             <div className="flex flex-col gap-4 w-12 md:w-14   shrink-0">
                 {displayImages.slice(0, 4).map((img, idx) => (
